@@ -4,57 +4,57 @@
 
 @layer base {
   :root {
-    --background: 220 15% 8%;
-    --foreground: 45 25% 92%;
-    --card: 225 20% 12%;
-    --card-foreground: 45 25% 92%;
-    --popover: 225 20% 12%;
-    --popover-foreground: 45 25% 92%;
-    --primary: 350 85% 65%;
-    --primary-foreground: 220 15% 8%;
-    --secondary: 280 60% 55%;
-    --secondary-foreground: 45 25% 92%;
-    --muted: 235 15% 18%;
-    --muted-foreground: 45 15% 65%;
-    --accent: 45 95% 68%;
-    --accent-foreground: 220 15% 8%;
+    --background: 210 20% 4%;
+    --foreground: 45 15% 85%;
+    --card: 215 18% 7%;
+    --card-foreground: 45 15% 85%;
+    --popover: 215 18% 7%;
+    --popover-foreground: 45 15% 85%;
+    --primary: 30 45% 55%;
+    --primary-foreground: 210 20% 4%;
+    --secondary: 240 15% 15%;
+    --secondary-foreground: 45 15% 85%;
+    --muted: 220 15% 10%;
+    --muted-foreground: 45 8% 60%;
+    --accent: 45 55% 65%;
+    --accent-foreground: 210 20% 4%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 240 20% 25%;
-    --input: 240 20% 25%;
-    --ring: 350 85% 65%;
+    --border: 225 20% 15%;
+    --input: 225 20% 15%;
+    --ring: 30 45% 55%;
     --radius: 0.75rem;
     
-    /* Film-inspired gradients with vibrant colors */
-    --gradient-golden: linear-gradient(135deg, hsl(45 95% 68%), hsl(350 85% 65%));
-    --gradient-noir: linear-gradient(180deg, hsl(220 15% 8%), hsl(225 20% 12%));
-    --gradient-purple: linear-gradient(135deg, hsl(280 60% 55%), hsl(260 70% 60%));
-    --shadow-cinematic: 0 25px 50px -12px hsl(220 15% 8% / 0.9);
-    --glow-golden: 0 0 30px hsl(45 95% 68% / 0.4);
-    --glow-pink: 0 0 25px hsl(350 85% 65% / 0.3);
-    --glow-purple: 0 0 20px hsl(280 60% 55% / 0.3);
+    /* Film-inspired gradients with darker tones */
+    --gradient-golden: linear-gradient(135deg, hsl(45 55% 65%), hsl(30 45% 55%));
+    --gradient-noir: linear-gradient(180deg, hsl(210 20% 4%), hsl(215 18% 7%));
+    --gradient-subtle: linear-gradient(135deg, hsl(240 15% 15%), hsl(220 15% 10%));
+    --shadow-cinematic: 0 25px 50px -12px hsl(210 20% 4% / 0.9);
+    --glow-golden: 0 0 25px hsl(45 55% 65% / 0.2);
+    --glow-subtle: 0 0 20px hsl(30 45% 55% / 0.15);
+    --glow-dark: 0 0 15px hsl(240 15% 15% / 0.3);
   }
 
   .dark {
-    --background: 220 15% 8%;
-    --foreground: 45 25% 92%;
-    --card: 225 20% 12%;
-    --card-foreground: 45 25% 92%;
-    --popover: 225 20% 12%;
-    --popover-foreground: 45 25% 92%;
-    --primary: 350 85% 65%;
-    --primary-foreground: 220 15% 8%;
-    --secondary: 280 60% 55%;
-    --secondary-foreground: 45 25% 92%;
-    --muted: 235 15% 18%;
-    --muted-foreground: 45 15% 65%;
-    --accent: 45 95% 68%;
-    --accent-foreground: 220 15% 8%;
+    --background: 210 20% 4%;
+    --foreground: 45 15% 85%;
+    --card: 215 18% 7%;
+    --card-foreground: 45 15% 85%;
+    --popover: 215 18% 7%;
+    --popover-foreground: 45 15% 85%;
+    --primary: 30 45% 55%;
+    --primary-foreground: 210 20% 4%;
+    --secondary: 240 15% 15%;
+    --secondary-foreground: 45 15% 85%;
+    --muted: 220 15% 10%;
+    --muted-foreground: 45 8% 60%;
+    --accent: 45 55% 65%;
+    --accent-foreground: 210 20% 4%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 240 20% 25%;
-    --input: 240 20% 25%;
-    --ring: 350 85% 65%;
+    --border: 225 20% 15%;
+    --input: 225 20% 15%;
+    --ring: 30 45% 55%;
   }
 }
 
@@ -64,9 +64,9 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
-    background-image: radial-gradient(circle at 20% 80%, hsl(280 60% 55% / 0.1) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, hsl(350 85% 65% / 0.1) 0%, transparent 50%),
-                      radial-gradient(circle at 40% 40%, hsl(45 95% 68% / 0.05) 0%, transparent 50%);
+    background-image: radial-gradient(circle at 20% 80%, hsl(240 15% 15% / 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, hsl(30 45% 55% / 0.05) 0%, transparent 50%),
+                      radial-gradient(circle at 40% 40%, hsl(220 15% 10% / 0.08) 0%, transparent 50%);
   }
 }
 

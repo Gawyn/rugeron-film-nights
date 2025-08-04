@@ -6,7 +6,7 @@ export const RugeronLogo = ({ size = 60 }: { size?: number }) => {
       <div className="relative">
         {/* Outer film reel ring */}
         <div 
-          className="border-4 border-primary rounded-full flex items-center justify-center shadow-pink-glow"
+          className="border-4 border-primary rounded-full flex items-center justify-center shadow-golden-glow"
           style={{ width: size, height: size }}
         >
           {/* Inner film holes pattern */}
@@ -15,7 +15,7 @@ export const RugeronLogo = ({ size = 60 }: { size?: number }) => {
             {[...Array(8)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1.5 h-1.5 bg-accent rounded-full shadow-golden-glow"
+                className="absolute w-1.5 h-1.5 bg-accent rounded-full shadow-subtle-glow"
                 style={{
                   top: '50%',
                   left: '50%',

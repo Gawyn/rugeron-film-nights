@@ -20,7 +20,7 @@ export const RugeronCard = ({ id, title, date, place, attendants, thumbnail }: R
 
   return (
     <Link to={`/rugeron/${id}`} className="block group">
-      <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-pink-glow film-grain">
+      <Card className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-golden-glow film-grain">
         <CardContent className="p-6">
           <div className="flex items-start gap-4">
             {thumbnail && (

@@ -118,7 +118,7 @@ const RugeronDetail = () => {
                   {rugeron.photos && rugeron.photos.map((photo, index) => (
                     <div
                       key={index}
-                      className="aspect-video bg-muted rounded-lg overflow-hidden hover:shadow-purple-glow transition-shadow"
+                      className="aspect-video bg-muted rounded-lg overflow-hidden hover:shadow-subtle-glow transition-shadow"
                     >
                       <img
                         src={photo}

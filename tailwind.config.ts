@@ -21,13 +21,13 @@ export default {
 			backgroundImage: {
 				'gradient-golden': 'var(--gradient-golden)',
 				'gradient-noir': 'var(--gradient-noir)',
-				'gradient-purple': 'var(--gradient-purple)',
+				'gradient-subtle': 'var(--gradient-subtle)',
 			},
 			boxShadow: {
 				'cinematic': 'var(--shadow-cinematic)',
 				'golden-glow': 'var(--glow-golden)',
-				'pink-glow': 'var(--glow-pink)',
-				'purple-glow': 'var(--glow-purple)',
+				'subtle-glow': 'var(--glow-subtle)',
+				'dark-glow': 'var(--glow-dark)',
 			},
 			colors: {
 				border: 'hsl(var(--border))',
