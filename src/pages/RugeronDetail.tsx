@@ -105,16 +105,17 @@ const RugeronDetail = () => {
           </Card>
         </div>
 
-        {/* Photo Gallery */}
-        {rugeron.photos && rugeron.photos.length > 0 && (
+        {/* Media Gallery */}
+        {((rugeron.photos && rugeron.photos.length > 0) || (rugeron.videos && rugeron.videos.length > 0)) && (
           <div className="mt-12 max-w-6xl mx-auto">
             <Card className="bg-card border-border">
               <CardHeader>
-                <CardTitle className="text-primary text-center">Photo Gallery</CardTitle>
+                <CardTitle className="text-primary text-center">Media Gallery</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {rugeron.photos.map((photo, index) => (
+                  {/* Photos */}
+                  {rugeron.photos && rugeron.photos.map((photo, index) => (
                     <div
                       key={index}
                       className="aspect-video bg-muted rounded-lg overflow-hidden hover:shadow-purple-glow transition-shadow"
@@ -133,6 +134,31 @@ const RugeronDetail = () => {
                           `;
                         }}
                       />
+                    </div>
+                  ))}
+                  
+                  {/* Videos */}
+                  {rugeron.videos && rugeron.videos.map((video, index) => (
+                    <div
+                      key={`video-${index}`}
+                      className="aspect-video bg-muted rounded-lg overflow-hidden hover:shadow-purple-glow transition-shadow"
+                    >
+                      <video
+                        src={video}
+                        controls
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLVideoElement;
+                          target.style.display = 'none';
+                          target.parentElement!.innerHTML = `
+                            <div class="w-full h-full flex items-center justify-center text-muted-foreground">
+                              Video ${index + 1}
+                            </div>
+                          `;
+                        }}
+                      >
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
                   ))}
                 </div>
