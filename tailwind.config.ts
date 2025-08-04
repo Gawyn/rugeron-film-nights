@@ -18,6 +18,14 @@ export default {
 			}
 		},
 		extend: {
+			backgroundImage: {
+				'gradient-golden': 'var(--gradient-golden)',
+				'gradient-noir': 'var(--gradient-noir)',
+			},
+			boxShadow: {
+				'cinematic': 'var(--shadow-cinematic)',
+				'golden-glow': 'var(--glow-golden)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

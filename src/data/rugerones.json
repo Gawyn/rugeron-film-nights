@@ -1,0 +1,87 @@
+[
+  {
+    "id": "sidney-pollack-2024",
+    "title": "Sidney Pollack Night",
+    "date": "2024-12-15",
+    "place": "Julia's Apartment",
+    "attendants": "Julia, Marco, Sofia, David, Elena",
+    "movies": [
+      {
+        "title": "The Way We Were",
+        "year": 1973,
+        "imdbId": "tt0070903"
+      },
+      {
+        "title": "Three Days of the Condor",
+        "year": 1975,
+        "imdbId": "tt0073802"
+      },
+      {
+        "title": "Out of Africa",
+        "year": 1985,
+        "imdbId": "tt0089755"
+      }
+    ],
+    "photos": [
+      "/photos/sidney-pollack/group-photo-1.jpg",
+      "/photos/sidney-pollack/movie-setup.jpg",
+      "/photos/sidney-pollack/snacks.jpg"
+    ],
+    "thumbnail": "/thumbnails/sidney-pollack.jpg"
+  },
+  {
+    "id": "carpenter-night-2024",
+    "title": "John Carpenter Night",
+    "date": "2024-10-31",
+    "place": "Marco's House",
+    "attendants": "Marco, Julia, David, Ana, Roberto",
+    "movies": [
+      {
+        "title": "The Thing",
+        "year": 1982,
+        "imdbId": "tt0084787"
+      },
+      {
+        "title": "They Live",
+        "year": 1988,
+        "imdbId": "tt0096256"
+      },
+      {
+        "title": "Escape from New York",
+        "year": 1981,
+        "imdbId": "tt0082340"
+      }
+    ],
+    "photos": [
+      "/photos/carpenter/halloween-setup.jpg",
+      "/photos/carpenter/group-watching.jpg",
+      "/photos/carpenter/horror-snacks.jpg"
+    ],
+    "thumbnail": "/thumbnails/carpenter.jpg"
+  },
+  {
+    "id": "neo-noir-2024",
+    "title": "Neo-Noir Night",
+    "date": "2024-09-20",
+    "place": "Sofia's Loft",
+    "attendants": "Sofia, Elena, Julia, Marco, Carlos",
+    "movies": [
+      {
+        "title": "Blade Runner",
+        "year": 1982,
+        "imdbId": "tt0083658"
+      },
+      {
+        "title": "The Long Good Friday",
+        "year": 1980,
+        "imdbId": "tt0081070"
+      }
+    ],
+    "photos": [
+      "/photos/neo-noir/blade-runner-screening.jpg",
+      "/photos/neo-noir/noir-atmosphere.jpg",
+      "/photos/neo-noir/group-discussion.jpg"
+    ],
+    "thumbnail": "/thumbnails/neo-noir.jpg"
+  }
+]
