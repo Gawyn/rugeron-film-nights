@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Calendar, MapPin, Users, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { RugeronLogo } from "@/components/RugeronLogo";
 import rugeroneData from "@/data/rugerones.json";
 
 const RugeronDetail = () => {
@@ -42,6 +43,9 @@ const RugeronDetail = () => {
 
         {/* Header */}
         <div className="text-center mb-12">
+          <div className="mb-6">
+            <RugeronLogo size={80} />
+          </div>
           <h1 className="text-5xl font-bold bg-gradient-golden bg-clip-text text-transparent mb-4">
             {rugeron.title}
           </h1>
@@ -113,7 +117,7 @@ const RugeronDetail = () => {
                   {rugeron.photos.map((photo, index) => (
                     <div
                       key={index}
-                      className="aspect-video bg-muted rounded-lg overflow-hidden hover:shadow-golden-glow transition-shadow"
+                      className="aspect-video bg-muted rounded-lg overflow-hidden hover:shadow-purple-glow transition-shadow"
                     >
                       <img
                         src={photo}

@@ -21,10 +21,13 @@ export default {
 			backgroundImage: {
 				'gradient-golden': 'var(--gradient-golden)',
 				'gradient-noir': 'var(--gradient-noir)',
+				'gradient-purple': 'var(--gradient-purple)',
 			},
 			boxShadow: {
 				'cinematic': 'var(--shadow-cinematic)',
 				'golden-glow': 'var(--glow-golden)',
+				'pink-glow': 'var(--glow-pink)',
+				'purple-glow': 'var(--glow-purple)',
 			},
 			colors: {
 				border: 'hsl(var(--border))',
