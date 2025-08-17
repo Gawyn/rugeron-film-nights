@@ -22,7 +22,7 @@
         "imdbId": "tt0086058"
       }
     ],
-    "thumbnail": "/thumbnails/rutger-hauer.png"
+    "thumbnail": "/thumbnails/sidney-pollack.jpg"
   },
   {
     "id": "walter-hill-2022",
@@ -33,23 +33,23 @@
     "movies": [
       {
         "title": "El luchador",
-        "year": 1975,
-        "imdbId": "tt0073092"
+        "year": 1979,
+        "imdbId": "tt0078902"
       },
       {
         "title": "The Driver",
         "year": 1978,
-        "imdbId": "tt0077474"
+        "imdbId": "tt0077402"
       },
       {
         "title": "Johnny Handsome",
         "year": 1989,
-        "imdbId": "tt0097626"
+        "imdbId": "tt0097610"
       },
       {
         "title": "Trespass",
         "year": 1992,
-        "imdbId": "tt0105636"
+        "imdbId": "tt0105585"
       },
       {
         "title": "The Warriors",
@@ -57,7 +57,7 @@
         "imdbId": "tt0080120"
       }
     ],
-    "thumbnail": "/thumbnails/walter-hill.png"
+    "thumbnail": "/thumbnails/sidney-pollack.jpg"
   },
   {
     "id": "robert-aldrich-2022",
@@ -69,30 +69,30 @@
       {
         "title": "Apache",
         "year": 1954,
-        "imdbId": "tt0046719"
+        "imdbId": "tt0046710"
       },
       {
         "title": "El beso mortal",
         "year": 1955,
-        "imdbId": "tt0048261"
+        "imdbId": "tt0047927"
       },
       {
         "title": "Canción de cuna para un cadáver",
         "year": 1964,
-        "imdbId": "tt0058213"
+        "imdbId": "tt0058083"
       },
       {
         "title": "Comando en el mar de China",
-        "year": 1970,
-        "imdbId": "tt0066471"
+        "year": 1966,
+        "imdbId": "tt0060472"
       },
       {
         "title": "El rompehuesos",
-        "year": 1974,
-        "imdbId": "tt0071771"
+        "year": 1972,
+        "imdbId": "tt0068327"
       }
     ],
-    "thumbnail": "/thumbnails/robert-aldrich.png"
+    "thumbnail": "/thumbnails/carpenter.jpg"
   },
   {
     "id": "max-ophuls-2022",
@@ -104,17 +104,17 @@
       {
         "title": "Carta de una desconocida",
         "year": 1948,
-        "imdbId": "tt0040536"
+        "imdbId": "tt0040208"
       },
       {
         "title": "La ronda",
         "year": 1950,
-        "imdbId": "tt0042906"
+        "imdbId": "tt0042876"
       },
       {
         "title": "Le plaisir",
         "year": 1952,
-        "imdbId": "tt0045034"
+        "imdbId": "tt0045008"
       },
       {
         "title": "Madame de...",
@@ -124,10 +124,10 @@
       {
         "title": "Lola Montes",
         "year": 1955,
-        "imdbId": "tt0048308"
+        "imdbId": "tt0048280"
       }
     ],
-    "thumbnail": "/thumbnails/max-ophuls.png"
+    "thumbnail": "/thumbnails/neo-noir.jpg"
   },
   {
     "id": "raoul-walsh-2022",
@@ -139,12 +139,12 @@
       {
         "title": "Gentleman Jim",
         "year": 1942,
-        "imdbId": "tt0034778"
+        "imdbId": "tt0034800"
       },
       {
         "title": "El último refugio",
-        "year": 1947,
-        "imdbId": "tt0039737"
+        "year": 1941,
+        "imdbId": "tt0033836"
       },
       {
         "title": "White Heat",
@@ -154,15 +154,15 @@
       {
         "title": "Perseguido",
         "year": 1947,
-        "imdbId": "tt0039737"
+        "imdbId": "tt0039416"
       },
       {
         "title": "El mundo en sus manos",
         "year": 1952,
-        "imdbId": "tt0045339"
+        "imdbId": "tt0044672"
       }
     ],
-    "thumbnail": "/thumbnails/raoul-walsh.png"
+    "thumbnail": "/thumbnails/neo-noir.jpg"
   },
   {
     "id": "terry-gilliam-2023",
@@ -174,7 +174,7 @@
       {
         "title": "Los héroes del tiempo",
         "year": 1981,
-        "imdbId": "tt0081633"
+        "imdbId": "tt0082085"
       },
       {
         "title": "Brazil",
@@ -184,15 +184,15 @@
       {
         "title": "Las aventuras del Barón Münchhausen",
         "year": 1988,
-        "imdbId": "tt0095289"
+        "imdbId": "tt0094747"
       },
       {
         "title": "El Rey Pescador",
         "year": 1991,
-        "imdbId": "tt0101534"
+        "imdbId": "tt0101889"
       }
     ],
-    "thumbnail": "/thumbnails/terry-gilliam.png"
+    "thumbnail": "/thumbnails/neo-noir.jpg"
   },
   {
     "id": "milos-forman-2023",
@@ -204,17 +204,17 @@
       {
         "title": "Pedro, el negro",
         "year": 1964,
-        "imdbId": "tt0056919"
+        "imdbId": "tt0058604"
       },
       {
         "title": "Los amores de una rubia",
         "year": 1965,
-        "imdbId": "tt0059415"
+        "imdbId": "tt0059712"
       },
       {
         "title": "Juventud sin esperanza",
-        "year": 1971,
-        "imdbId": "tt0067820"
+        "year": 1967,
+        "imdbId": "tt0062142"
       },
       {
         "title": "Alguien voló sobre el nido del cuco",
@@ -222,7 +222,7 @@
         "imdbId": "tt0073486"
       }
     ],
-    "thumbnail": "/thumbnails/milos-forman.png"
+    "thumbnail": "/thumbnails/neo-noir.jpg"
   },
   {
     "id": "harmony-korine-2024",
@@ -244,15 +244,15 @@
       {
         "title": "Julien Donkey Boy",
         "year": 1999,
-        "imdbId": "tt0192194"
+        "imdbId": "tt0183505"
       },
       {
         "title": "Mr. Lonely",
         "year": 2007,
-        "imdbId": "tt0475984"
+        "imdbId": "tt0461703"
       }
     ],
-    "thumbnail": "/thumbnails/harmony-korine.png"
+    "thumbnail": "/thumbnails/neo-noir.jpg"
   },
   {
     "id": "yasuzo-masumura-2024",
@@ -264,75 +264,75 @@
       {
         "title": "Giants & Toys",
         "year": 1958,
-        "imdbId": "tt0051834"
+        "imdbId": "tt0051658"
       },
       {
         "title": "Red Angel",
         "year": 1966,
-        "imdbId": "tt0139820"
+        "imdbId": "tt0060890"
       },
       {
         "title": "The wife of Seishu Hanaoka",
         "year": 1967,
-        "imdbId": "tt0140093"
+        "imdbId": "tt0061898"
       },
       {
         "title": "Blind Beast",
         "year": 1969,
-        "imdbId": "tt0140384"
+        "imdbId": "tt0064098"
       }
     ],
-    "thumbnail": "/thumbnails/yasuzo-masumura.png"
+    "thumbnail": "/thumbnails/neo-noir.jpg"
   },
   {
     "id": "agnes-varda-2024",
     "title": "Agnès Varda",
     "date": "06-09-2024",
-    "place": "Can Jordi Batet",
+    "place": "Can Jolanta",
     "attendants": "Cristian, Jaume, Javi, Jolanta, Silvia",
     "movies": [
       {
         "title": "Les Fiancés du pont Mac Donald",
         "year": 1961,
-        "imdbId": "tt1086289"
+        "imdbId": "tt0054953"
       },
       {
         "title": "Le bonheur",
         "year": 1965,
-        "imdbId": "tt0058985"
+        "imdbId": "tt0058946"
       },
       {
         "title": "Daguerreotypes",
         "year": 1976,
-        "imdbId": "tt0071384"
+        "imdbId": "tt0072859"
       },
       {
         "title": "Vagabond",
         "year": 1985,
-        "imdbId": "tt0089960"
+        "imdbId": "tt0088275"
       },
       {
         "title": "Uncle Yanco",
         "year": 1967,
-        "imdbId": "tt0179389"
+        "imdbId": "tt0062408"
       },
       {
         "title": "Black Panthers",
         "year": 1968,
-        "imdbId": "tt0209942"
+        "imdbId": "tt0062759"
       },
       {
         "title": "Jacquot de Nantes",
         "year": 1991,
-        "imdbId": "tt0102141"
+        "imdbId": "tt0102108"
       },
       {
         "title": "Homage to Zgougou the Cat",
-        "year": 2002,
-        "imdbId": "tt3333182"
+        "year": 2004,
+        "imdbId": "tt0423408"
       }
     ],
-    "thumbnail": "/thumbnails/agnes-varda.png"
+    "thumbnail": "/thumbnails/neo-noir.jpg"
   },
   {
     "id": "powell-pressburger-2025",
@@ -344,7 +344,7 @@
       {
         "title": "Sé a dónde voy",
         "year": 1945,
-        "imdbId": "tt0037800"
+        "imdbId": "tt0037884"
       },
       {
         "title": "A matter of Life and Death",
@@ -359,42 +359,42 @@
       {
         "title": "Narciso Negro",
         "year": 1947,
-        "imdbId": "tt0039192"
+        "imdbId": "tt0039729"
       },
       {
         "title": "El ladrón de Bagdad",
         "year": 1940,
-        "imdbId": "tt0033152"
+        "imdbId": "tt0032635"
       },
       {
         "title": "Los cuentos de Hoffman",
         "year": 1951,
-        "imdbId": "tt0044103"
+        "imdbId": "tt0042546"
       }
     ],
-    "thumbnail": "/thumbnails/michael-powell.png"
+    "thumbnail": "/thumbnails/neo-noir.jpg"
   },
   {
-    "id": "sydney-pollack-2025",
-    "title": "Sydney Pollack",
-    "date": "02-08-2025",
+    "id": "sidney-pollack-2025",
+    "title": "Sidney Pollack",
+    "date": "02-08-2022",
     "place": "Can CupiJavi",
     "attendants": "Bea, Cristian, David, Gerard, Jaume, Javi, Jolanta, Julia, Silvia",
     "movies": [
       {
         "title": "El nadador",
         "year": 1968,
-        "imdbId": "tt0063663"
+        "imdbId": "tt0063150"
       },
       {
         "title": "Propiedad condenada",
-        "year": null,
-        "imdbId": null
+        "year": 1966,
+        "imdbId": "tt0060390"
       },
       {
         "title": "Danzad, danzad, malditos",
-        "year": null,
-        "imdbId": null
+        "year": 1969,
+        "imdbId": "tt0064276"
       },
       {
         "title": "Jeremiah Johnson",
@@ -404,17 +404,17 @@
       {
         "title": "The Way We Were",
         "year": 1973,
-        "imdbId": "tt0070288"
+        "imdbId": "tt0070903"
       },
       {
         "title": "Amazing Grace",
-        "year": null,
-        "imdbId": null
+        "year": 1974,
+        "imdbId": "tt0071107"
       },
       {
-        "title": "Los tres días del cóndor",
+        "title": "Los tres días del condor",
         "year": 1975,
-        "imdbId": "tt0071208"
+        "imdbId": "tt0073802"
       },
       {
         "title": "Tootsie",
@@ -424,9 +424,9 @@
       {
         "title": "Yakuza",
         "year": 1974,
-        "imdbId": "tt0071690"
+        "imdbId": "tt0072371"
       }
     ],
-    "thumbnail": "/thumbnails/sydney-pollack.png"
+    "thumbnail": "/thumbnails/neo-noir.jpg"
   }
 ]

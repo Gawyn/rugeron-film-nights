@@ -2,8 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Calendar, MapPin, Users, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { RugeronLogo } from "@/components/RugeronLogo";
 import rugeroneData from "@/data/rugerones.json";
+import { parseEuropeanDate } from "@/lib/utils";
 
 const RugeronDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,16 +13,16 @@ const RugeronDetail = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Rugerón Not Found</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">Rugerón No Encontrado</h1>
           <Link to="/">
-            <Button variant="outline">Back to Home</Button>
+            <Button variant="outline">Volver al Inicio</Button>
           </Link>
         </div>
       </div>
     );
   }
 
-  const formattedDate = new Date(rugeron.date).toLocaleDateString('en-US', {
+  const formattedDate = parseEuropeanDate(rugeron.date).toLocaleDateString('es-ES', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
@@ -36,27 +36,38 @@ const RugeronDetail = () => {
           <Link to="/">
             <Button variant="outline" className="gap-2">
               <ArrowLeft className="w-4 h-4" />
-              Back to Rugerones
+              Volver a Rugerones
             </Button>
           </Link>
         </div>
 
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="mb-6">
-            <RugeronLogo size={80} />
-          </div>
-          <h1 className="text-5xl font-bold bg-gradient-golden bg-clip-text text-transparent mb-4">
-            {rugeron.title}
-          </h1>
-          <div className="flex items-center justify-center gap-6 text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-5 h-5" />
-              <span className="text-lg">{formattedDate}</span>
+        <div className="mb-12">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+            {/* Thumbnail Image */}
+            <div className="flex-shrink-0">
+              <img 
+                src={rugeron.thumbnail} 
+                alt={`${rugeron.title} thumbnail`}
+                className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-lg"
+              />
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5" />
-              <span className="text-lg">{rugeron.place}</span>
+            
+            {/* Title and Info */}
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-golden bg-clip-text text-transparent mb-4">
+                {rugeron.title}
+              </h1>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-5 h-5" />
+                  <span className="text-lg">{formattedDate}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5" />
+                  <span className="text-lg">{rugeron.place}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -67,7 +78,7 @@ const RugeronDetail = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-primary">
                 <Users className="w-5 h-5" />
-                Attendants
+                Asistentes
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -78,7 +89,7 @@ const RugeronDetail = () => {
           {/* Movies */}
           <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-primary">Movies Watched</CardTitle>
+              <CardTitle className="text-primary">Películas Vistas</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
@@ -104,68 +115,6 @@ const RugeronDetail = () => {
             </CardContent>
           </Card>
         </div>
-
-        {/* Media Gallery */}
-        {((rugeron.photos && rugeron.photos.length > 0) || (rugeron.videos && rugeron.videos.length > 0)) && (
-          <div className="mt-12 max-w-6xl mx-auto">
-            <Card className="bg-card border-border">
-              <CardHeader>
-                <CardTitle className="text-primary text-center">Media Gallery</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {/* Photos */}
-                  {rugeron.photos && rugeron.photos.map((photo, index) => (
-                    <div
-                      key={index}
-                      className="aspect-video bg-muted rounded-lg overflow-hidden hover:shadow-subtle-glow transition-shadow"
-                    >
-                      <img
-                        src={photo}
-                        alt={`${rugeron.title} - Photo ${index + 1}`}
-                        className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          target.parentElement!.innerHTML = `
-                            <div class="w-full h-full flex items-center justify-center text-muted-foreground">
-                              Photo ${index + 1}
-                            </div>
-                          `;
-                        }}
-                      />
-                    </div>
-                  ))}
-                  
-                  {/* Videos */}
-                  {rugeron.videos && rugeron.videos.map((video, index) => (
-                    <div
-                      key={`video-${index}`}
-                      className="aspect-video bg-muted rounded-lg overflow-hidden hover:shadow-purple-glow transition-shadow"
-                    >
-                      <video
-                        src={video}
-                        controls
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLVideoElement;
-                          target.style.display = 'none';
-                          target.parentElement!.innerHTML = `
-                            <div class="w-full h-full flex items-center justify-center text-muted-foreground">
-                              Video ${index + 1}
-                            </div>
-                          `;
-                        }}
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        )}
       </div>
     </div>
   );

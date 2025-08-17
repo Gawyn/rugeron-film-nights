@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, MapPin, Users } from "lucide-react";
+import { parseEuropeanDate } from "@/lib/utils";
 
 interface RugeronCardProps {
   id: string;
@@ -12,7 +13,7 @@ interface RugeronCardProps {
 }
 
 export const RugeronCard = ({ id, title, date, place, attendants, thumbnail }: RugeronCardProps) => {
-  const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  const formattedDate = parseEuropeanDate(date).toLocaleDateString('es-ES', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
