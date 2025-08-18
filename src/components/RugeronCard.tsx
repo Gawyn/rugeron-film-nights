@@ -25,7 +25,7 @@ export const RugeronCard = ({ id, title, date, place, attendants, thumbnail }: R
         <CardContent className="p-6">
           <div className="flex items-start gap-4">
             {thumbnail && (
-              <div className="w-20 h-20 bg-muted rounded-lg flex-shrink-0 overflow-hidden">
+              <div className="w-28 h-28 bg-muted rounded-lg flex-shrink-0 overflow-hidden">
                 <img 
                   src={thumbnail} 
                   alt={title}
