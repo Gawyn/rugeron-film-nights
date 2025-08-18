@@ -53,9 +53,8 @@ const Index = () => {
               </div>
               <div className="flex-1 text-center lg:text-left">
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Rugerón es una noche de cine recurrente en honor a <span className="text-primary font-semibold">Rutger Hauer</span>. 
-                  Cada edición presenta un tema — generalmente un director o género — y reúne a amigos 
-                  para una noche de cine y diversión.
+                  Rugerón es un evento de cine que celebramos periódicamente. Nació en 2022 inspirado por el gran <span className="text-primary font-semibold">Rutger Hauer</span>. 
+                  Cada edición tiene un tema, a menudo un director, y nos reúne para disfrutar juntos de la magia del cine.
                 </p>
               </div>
             </div>
