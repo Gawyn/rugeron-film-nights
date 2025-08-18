@@ -62,6 +62,27 @@ This project is built with:
 
 ## How can I deploy this project?
 
+### Option 1: GitHub Pages (Recommended)
+
+This project is configured for automatic deployment to GitHub Pages. Here's how to set it up:
+
+1. **Enable GitHub Pages in your repository:**
+   - Go to your repository on GitHub
+   - Click on "Settings" → "Pages"
+   - Under "Source", select "Deploy from a branch"
+   - Choose "gh-pages" branch and click "Save"
+
+2. **Automatic deployment:**
+   - Every time you push to the `main` branch, GitHub Actions will automatically build and deploy your app
+   - Your app will be available at: `https://cplanas.github.io/rugeron-film-nights`
+
+3. **Manual deployment (if needed):**
+   ```bash
+   npm run deploy
+   ```
+
+### Option 2: Lovable
+
 Simply open [Lovable](https://lovable.dev/projects/f8712f0d-fe11-4953-8aed-1b35ac8fc7a4) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?

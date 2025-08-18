@@ -1,13 +1,15 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, MapPin, Users, ExternalLink } from "lucide-react";
+import { ArrowLeft, Calendar, MapPin, Users, ExternalLink, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import rugeroneData from "@/data/rugerones.json";
 import { parseEuropeanDate } from "@/lib/utils";
+import { useState } from "react";
 
 const RugeronDetail = () => {
   const { id } = useParams<{ id: string }>();
   const rugeron = rugeroneData.find(r => r.id === id);
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
   if (!rugeron) {
     return (
@@ -49,7 +51,7 @@ const RugeronDetail = () => {
               <img 
                 src={rugeron.thumbnail} 
                 alt={`${rugeron.title} thumbnail`}
-                className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg shadow-lg"
+                className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-lg shadow-lg"
               />
             </div>
             
@@ -115,6 +117,52 @@ const RugeronDetail = () => {
             </CardContent>
           </Card>
         </div>
+
+        {/* Photos Section */}
+        {rugeron.photos && rugeron.photos.length > 0 && (
+          <div className="mt-12 max-w-6xl mx-auto">
+            <Card className="bg-card border-border">
+              <CardHeader>
+                <CardTitle className="text-primary">Fotos</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {rugeron.photos.map((photo, index) => (
+                    <div key={index} className="overflow-hidden rounded-lg cursor-pointer group">
+                      <img
+                        src={photo}
+                        alt={`${rugeron.title} photo ${index + 1}`}
+                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                        onClick={() => setSelectedPhoto(photo)}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {/* Photo Modal */}
+        {selectedPhoto && (
+          <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+            <div className="relative max-w-full max-h-full">
+              <img
+                src={selectedPhoto}
+                alt="Full size photo"
+                className="max-w-full max-h-full object-contain"
+              />
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute top-4 right-4 bg-background hover:bg-background/80"
+                onClick={() => setSelectedPhoto(null)}
+              >
+                <X className="w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
