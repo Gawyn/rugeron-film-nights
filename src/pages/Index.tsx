@@ -41,6 +41,9 @@ const Index = () => {
         <meta name="twitter:title" content="Rugerón - Noches de Cine en Honor a Rutger Hauer" />
         <meta name="twitter:description" content="Rugerón es una noche de cine recurrente en honor a Rutger Hauer. Cada edición presenta un tema — generalmente un director o género — y reúne a amigos para una noche de cine y diversión." />
         <meta name="twitter:image" content="/rugeron-header.png" />
+        <meta name="twitter:title" content="Rugerón - Noches de Cine en Honor a Rutger Hauer" />
+        <meta name="twitter:description" content="Rugerón es una noche de cine recurrente en honor a Rutger Hauer. Cada edición presenta un tema — generalmente un director o género — y reúne a amigos para una noche de cine y diversión." />
+        <meta name="twitter:image" content="/rugeron-header.png" />
         <meta name="twitter:image:alt" content="Rugerón - Logo" />
         
         {/* Additional meta tags */}
