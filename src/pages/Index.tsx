@@ -4,8 +4,18 @@ import rugeroneData from "@/data/rugerones.json";
 import { parseEuropeanDate } from "@/lib/utils";
 
 const Index = () => {
-  // Sort rugerones by date, newest first
-  const sortedRugerones = [...rugeroneData].sort((a, b) => 
+  const currentDate = new Date();
+  
+  // Separate rugerones into upcoming and previous
+  const upcomingRugerones = rugeroneData.filter(rugeron => 
+    parseEuropeanDate(rugeron.date) > currentDate
+  ).sort((a, b) => 
+    parseEuropeanDate(a.date).getTime() - parseEuropeanDate(b.date).getTime()
+  );
+  
+  const previousRugerones = rugeroneData.filter(rugeron => 
+    parseEuropeanDate(rugeron.date) <= currentDate
+  ).sort((a, b) => 
     parseEuropeanDate(b.date).getTime() - parseEuropeanDate(a.date).getTime()
   );
 
@@ -60,23 +70,48 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Rugerones List */}
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-              Rugerones Anteriores
-            </h2>
-            <div className="space-y-6">
-              {sortedRugerones.map((rugeron) => (
-                <RugeronCard
-                  key={rugeron.id}
-                  id={rugeron.id}
-                  title={rugeron.title}
-                  date={rugeron.date}
-                  place={rugeron.place}
-                  attendants={rugeron.attendants}
-                  thumbnail={rugeron.thumbnail}
-                />
-              ))}
+          {/* Rugerones Lists */}
+          <div className="max-w-4xl mx-auto space-y-16">
+            {/* Upcoming Rugerones */}
+            {upcomingRugerones.length > 0 && (
+              <div>
+                <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+                  Próximos Rugerones
+                </h2>
+                <div className="space-y-6">
+                  {upcomingRugerones.map((rugeron) => (
+                    <RugeronCard
+                      key={rugeron.id}
+                      id={rugeron.id}
+                      title={rugeron.title}
+                      date={rugeron.date}
+                      place={rugeron.place}
+                      attendants={rugeron.attendants}
+                      thumbnail={rugeron.thumbnail}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Previous Rugerones */}
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+                Rugerones Anteriores
+              </h2>
+              <div className="space-y-6">
+                {previousRugerones.map((rugeron) => (
+                  <RugeronCard
+                    key={rugeron.id}
+                    id={rugeron.id}
+                    title={rugeron.title}
+                    date={rugeron.date}
+                    place={rugeron.place}
+                    attendants={rugeron.attendants}
+                    thumbnail={rugeron.thumbnail}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

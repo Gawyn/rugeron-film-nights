@@ -258,7 +258,7 @@
     "id": "yasuzo-masumura-2024",
     "title": "Yasuzo Masumura",
     "date": "25-05-2024",
-    "place": "Can Jolanta",
+    "place": "Embajada Cultural de Lituania en Barcelona",
     "attendants": "Cristian, Jaume, Javi, Jolanta, Silvia",
     "movies": [
       {
@@ -288,7 +288,7 @@
     "id": "agnes-varda-2024",
     "title": "Agnès Varda",
     "date": "06-09-2024",
-    "place": "Can Jordi Batet",
+    "place": "Embajada Cultural de Lituania en Barcelona",
     "attendants": "Cristian, Jaume, Javi, Jolanta, Silvia",
     "movies": [
       {
@@ -431,5 +431,45 @@
       "/photos/sydney-pollack/1.jpg"
     ],
     "thumbnail": "/thumbnails/sydney-pollack.png"
+  },
+  {
+    "id": "aki-kaurismaki-2025",
+    "title": "Aki Kaurismäki",
+    "date": "23-08-2025",
+    "place": "Can Carles",
+    "attendants": "?",
+    "movies": [
+    ],
+    "thumbnail": "/thumbnails/aki-kaurismaki.png"
+  },
+  {
+    "id": "tomas-gutierrez-alea-2025",
+    "title": "Tomás Gutiérrez Alea",
+    "date": "13-09-2025",
+    "place": "Embajada Cultural de Lituania en Barcelona",
+    "attendants": "?",
+    "movies": [
+      {
+        "title": "Muerte de un burócrata",
+        "year": 1966,
+        "imdbId": "tt0060722"
+      },
+      {
+        "title": "Memorias del subdesarrollo",
+        "year": 1968,
+        "imdbId": "tt0063291"
+      },
+      {
+        "title": "Los sobrevivientes",
+        "year": 1979,
+        "imdbId": "tt0079919"
+      },
+      {
+        "title": "Guantanamera",
+        "year": 1995,
+        "imdbId": "tt0109949"
+      }
+    ],
+    "thumbnail": "/thumbnails/tomas-gutierrez-alea.png"
   }
 ]

@@ -116,7 +116,7 @@ const RugeronDetail = () => {
           {/* Movies */}
           <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-primary">Películas Vistas</CardTitle>
+              <CardTitle className="text-primary">Películas</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
