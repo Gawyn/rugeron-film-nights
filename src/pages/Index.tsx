@@ -17,18 +17,26 @@ const Index = () => {
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={window.location.origin} />
         <meta property="og:title" content="Rugerón - Noches de Cine en Honor a Rutger Hauer" />
         <meta property="og:description" content="Rugerón es una noche de cine recurrente en honor a Rutger Hauer. Cada edición presenta un tema — generalmente un director o género — y reúne a amigos para una noche de cine y diversión." />
-        <meta property="og:image" content={`${window.location.origin}/rugeron-header.png`} />
+        <meta property="og:image" content="/rugeron-header.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Rugerón - Logo" />
+        <meta property="og:site_name" content="Rugerón" />
+        <meta property="og:locale" content="es_ES" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Rugerón - Noches de Cine en Honor a Rutger Hauer" />
         <meta name="twitter:description" content="Rugerón es una noche de cine recurrente en honor a Rutger Hauer. Cada edición presenta un tema — generalmente un director o género — y reúne a amigos para una noche de cine y diversión." />
-        <meta name="twitter:image" content={`${window.location.origin}/rugeron-header.png`} />
+        <meta name="twitter:image" content="/rugeron-header.png" />
+        <meta name="twitter:image:alt" content="Rugerón - Logo" />
+        
+        {/* Additional meta tags */}
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Rugerón" />
+        <link rel="canonical" href="/" />
       </Helmet>
       
       <div className="min-h-screen bg-background film-grain">
