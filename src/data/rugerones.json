@@ -8,8 +8,8 @@
     "movies": [
       {
         "title": "Carretera al Infierno",
-        "year": 1974,
-        "imdbId": "tt0070060"
+        "year": 1986,
+        "imdbId": "tt0091209"
       },
       {
         "title": "Los señores del acero",
@@ -144,7 +144,7 @@
       {
         "title": "El último refugio",
         "year": 1947,
-        "imdbId": "tt0039737"
+        "imdbId": "tt0033717"
       },
       {
         "title": "White Heat",
@@ -184,12 +184,12 @@
       {
         "title": "Las aventuras del Barón Münchhausen",
         "year": 1988,
-        "imdbId": "tt0095289"
+        "imdbId": "tt0096764"
       },
       {
         "title": "El Rey Pescador",
         "year": 1991,
-        "imdbId": "tt0101534"
+        "imdbId": "tt0101889"
       }
     ],
     "thumbnail": "/thumbnails/terry-gilliam.png"
@@ -404,7 +404,7 @@
       {
         "title": "The Way We Were",
         "year": 1973,
-        "imdbId": "tt0070288"
+        "imdbId": "tt0070903"
       },
       {
         "title": "Amazing Grace",
@@ -414,7 +414,7 @@
       {
         "title": "Los tres días del cóndor",
         "year": 1975,
-        "imdbId": "tt0071208"
+        "imdbId": "tt0073802"
       },
       {
         "title": "Tootsie",
@@ -422,9 +422,9 @@
         "imdbId": "tt0084805"
       },
       {
-        "title": "Yakuza",
+        "title": "The Yakuza",
         "year": 1974,
-        "imdbId": "tt0071690"
+        "imdbId": "tt0073918"
       }
     ],
     "photos": [
