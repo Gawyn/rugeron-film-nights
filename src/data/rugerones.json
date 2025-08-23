@@ -433,6 +433,26 @@
     "thumbnail": "/thumbnails/sydney-pollack.png"
   },
   {
+    "id": "alan-j-pakula-2025",
+    "title": "Alan J. Pakula",
+    "date": "22-08-2025",
+    "place": "Can Carles",
+    "attendants": "Carles, Cristian, Jaume, Jolanta, Silvia",
+    "movies": [
+      {
+        "title": "Klute",
+        "year": 1971,
+        "imdbId": "tt0067309"
+      },
+      {
+        "title": "El último testigo",
+        "year": 1974,
+        "imdbId": "tt0071970"
+      }
+    ],
+    "thumbnail": "/thumbnails/alan-j-pakula.png"
+  },
+  {
     "id": "tomas-gutierrez-alea-2025",
     "title": "Tomás Gutiérrez Alea",
     "date": "13-09-2025",
