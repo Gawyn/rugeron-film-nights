@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -13,32 +12,15 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <>
-      <Helmet>
-        <title>Página No Encontrada - Rugerón</title>
-        <meta name="description" content="La página solicitada no fue encontrada." />
-        
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Página No Encontrada - Rugerón" />
-        <meta property="og:description" content="La página solicitada no fue encontrada." />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Página No Encontrada - Rugerón" />
-        <meta name="twitter:description" content="La página solicitada no fue encontrada." />
-      </Helmet>
-      
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4 text-foreground">404</h1>
-          <p className="text-xl text-muted-foreground mb-4">¡Ups! Página no encontrada</p>
-          <a href="/" className="text-primary hover:text-accent underline">
-            Volver al Inicio
-          </a>
-        </div>
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4 text-foreground">404</h1>
+        <p className="text-xl text-muted-foreground mb-4">¡Ups! Página no encontrada</p>
+        <a href="/" className="text-primary hover:text-accent underline">
+          Volver al Inicio
+        </a>
       </div>
-    </>
+    </div>
   );
 };
 

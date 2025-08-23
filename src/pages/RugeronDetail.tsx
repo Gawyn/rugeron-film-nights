@@ -4,43 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import rugeroneData from "@/data/rugerones.json";
 import { parseEuropeanDate } from "@/lib/utils";
-import { useState, useEffect } from "react";
-import { useMeta } from "@/hooks/use-meta";
+import { useState } from "react";
 
 const RugeronDetail = () => {
   const { id } = useParams<{ id: string }>();
   const rugeron = rugeroneData.find(r => r.id === id);
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
-
-  // Set metadata for 404 case
-  useEffect(() => {
-    if (!rugeron) {
-      document.title = "Rugerón No Encontrado";
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', 'El rugerón solicitado no fue encontrado.');
-      }
-    }
-  }, [rugeron]);
-
-  // Prepare metadata for the rugeron
-  const formattedDate = rugeron ? parseEuropeanDate(rugeron.date).toLocaleDateString('es-ES', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  }) : '';
-
-  const currentUrl = rugeron ? `/rugeron/${rugeron.id}` : '';
-  const thumbnailUrl = rugeron ? rugeron.thumbnail : '';
-  const moviesList = rugeron ? rugeron.movies.map(m => `${m.title} (${m.year})`).join(', ') : '';
-
-  // Use the custom metadata hook
-  useMeta({
-    title: rugeron ? `${rugeron.title} - Rugerón` : "Rugerón No Encontrado",
-    description: rugeron ? `Rugerón: ${rugeron.title} - ${formattedDate} en ${rugeron.place}. Películas: ${moviesList}. Asistentes: ${rugeron.attendants}` : 'El rugerón solicitado no fue encontrado.',
-    image: thumbnailUrl,
-    url: currentUrl
-  });
 
   if (!rugeron) {
     return (
@@ -54,6 +23,12 @@ const RugeronDetail = () => {
       </div>
     );
   }
+
+  const formattedDate = parseEuropeanDate(rugeron.date).toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
 
   return (
     <div className="min-h-screen bg-background film-grain">
@@ -116,7 +91,7 @@ const RugeronDetail = () => {
           {/* Movies */}
           <Card className="bg-card border-border">
             <CardHeader>
-              <CardTitle className="text-primary">Películas</CardTitle>
+              <CardTitle className="text-primary">Películas Vistas</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
