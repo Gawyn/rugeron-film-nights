@@ -457,7 +457,7 @@
     "title": "Tomás Gutiérrez Alea",
     "date": "13-09-2025",
     "place": "Embajada Cultural de Lituania en Barcelona",
-    "attendants": "?",
+    "attendants": "Cristian, Javi, Jaume, Jolanta, Silvia",
     "movies": [
       {
         "title": "Muerte de un burócrata",
@@ -481,5 +481,36 @@
       }
     ],
     "thumbnail": "/thumbnails/tomas-gutierrez-alea.png"
+  },
+  {
+    "id": "kinuyo-tanaka-2026",
+    "title": "Kinuyo Tanaka",
+    "date": "25-07-2026",
+    "place": "Rugeródromo",
+    "attendants": "?",
+    "movies": [
+      {
+        "title": "La vida de Oharu, mujer galante",
+        "year": 1952,
+        "imdbId": "tt0045112"
+      },
+      {
+        "title": "La balada de Narayama",
+        "year": 1958,
+        "imdbId": "tt0051980"
+      },
+      {
+        "title": "La luna se levanta",
+        "year": 1955,
+        "imdbId": "tt0417214"
+      },
+      {
+        "title": "Pechos eternos",
+        "year": 1955,
+        "imdbId": "tt0259248"
+      }
+    ],
+    "thumbnail": "/thumbnails/kinuyo-tanaka.png"
+
   }
 ]
