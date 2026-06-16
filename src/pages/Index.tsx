@@ -1,6 +1,6 @@
 import { RugeronCard } from "@/components/RugeronCard";
 import rugeroneData from "@/data/rugerones.json";
-import { parseEuropeanDate } from "@/lib/utils";
+import { assetPath, parseEuropeanDate } from "@/lib/utils";
 
 const Index = () => {
   const currentDate = new Date();
@@ -26,7 +26,7 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8 max-w-5xl mx-auto">
             <div className="w-full lg:w-auto lg:flex-shrink-0">
               <img 
-                src="/rugeron-header.png" 
+                src={assetPath("/rugeron-header.png")}
                 alt="Rugerón" 
                 className="w-full lg:w-auto lg:max-w-md h-auto"
               />

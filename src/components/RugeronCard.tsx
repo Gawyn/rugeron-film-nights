@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, MapPin, Users } from "lucide-react";
-import { parseEuropeanDate } from "@/lib/utils";
+import { assetPath, parseEuropeanDate } from "@/lib/utils";
 
 interface RugeronCardProps {
   id: string;
@@ -27,7 +27,7 @@ export const RugeronCard = ({ id, title, date, place, attendants, thumbnail }: R
             {thumbnail && (
               <div className="w-28 h-28 bg-muted rounded-lg flex-shrink-0 overflow-hidden">
                 <img 
-                  src={thumbnail} 
+                  src={assetPath(thumbnail)}
                   alt={title}
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                   onError={(e) => {

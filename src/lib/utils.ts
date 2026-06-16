@@ -14,3 +14,14 @@ export function parseEuropeanDate(dateString: string): Date {
   const [day, month, year] = dateString.split('-').map(Number);
   return new Date(year, month - 1, day); // month is 0-indexed in Date constructor
 }
+
+export function assetPath(path: string): string {
+  if (/^(https?:|data:|blob:)/.test(path)) {
+    return path;
+  }
+
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+
+  return `${base}${normalizedPath}`;
+}

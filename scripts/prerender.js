@@ -1,114 +1,123 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const rootDir = path.join(__dirname, "..");
+const distDir = path.join(rootDir, "dist");
+const rugeronDir = path.join(distDir, "rugeron");
 
-// Read the rugerones data
-const rugeronesData = JSON.parse(fs.readFileSync(path.join(__dirname, '../src/data/rugerones.json'), 'utf8'));
+const rugeronesData = JSON.parse(
+  fs.readFileSync(path.join(rootDir, "src/data/rugerones.json"), "utf8")
+);
+const packageJson = JSON.parse(
+  fs.readFileSync(path.join(rootDir, "package.json"), "utf8")
+);
+const baseHTMLPath = path.join(distDir, "index.html");
 
-// Read the base HTML template
-const baseHTML = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
+if (!fs.existsSync(baseHTMLPath)) {
+  throw new Error("Run `vite build` before prerendering pages.");
+}
 
-// Function to generate metadata for a rugeron
+const baseHTML = fs.readFileSync(baseHTMLPath, "utf8");
+const siteUrl = (process.env.SITE_URL || packageJson.homepage).replace(/\/$/, "");
+const basePath = new URL(siteUrl).pathname.replace(/\/$/, "");
+
+function escapeHTML(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+function parseEuropeanDate(dateString) {
+  const [day, month, year] = dateString.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
+function assetUrl(assetPath) {
+  if (/^https?:/.test(assetPath)) {
+    return assetPath;
+  }
+
+  const normalizedPath = assetPath.startsWith("/") ? assetPath : `/${assetPath}`;
+  return `${siteUrl}${normalizedPath}`;
+}
+
+function pageUrl(rugeron) {
+  return `${siteUrl}/rugeron/${rugeron.id}/`;
+}
+
+function routePath(rugeron) {
+  return `${basePath}/rugeron/${rugeron.id}/`;
+}
+
 function generateRugeronMetadata(rugeron) {
-  const formattedDate = new Date(rugeron.date.split('-').reverse().join('-')).toLocaleDateString('es-ES', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  const formattedDate = parseEuropeanDate(rugeron.date).toLocaleDateString("es-ES", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
-  
-  const moviesList = rugeron.movies.map(m => `${m.title} (${m.year})`).join(', ');
-  
+  const moviesList = rugeron.movies.map((movie) => `${movie.title} (${movie.year})`).join(", ");
+
   return {
     title: `${rugeron.title} - Rugerón`,
     description: `Rugerón: ${rugeron.title} - ${formattedDate} en ${rugeron.place}. Películas: ${moviesList}. Asistentes: ${rugeron.attendants}`,
-    image: rugeron.thumbnail,
-    url: `/rugeron/${rugeron.id}`
+    image: assetUrl(rugeron.thumbnail),
+    url: pageUrl(rugeron),
   };
 }
 
-// Function to generate HTML for a rugeron page
 function generateRugeronHTML(rugeron) {
   const metadata = generateRugeronMetadata(rugeron);
-  
-  // Create the HTML content with proper metadata
-  const html = `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${metadata.title}</title>
-    <meta name="description" content="${metadata.description}" />
+  const metaTags = `
+    <meta name="description" content="${escapeHTML(metadata.description)}" />
     <meta name="author" content="Rugerón" />
-    
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="${metadata.url}" />
-    <meta property="og:title" content="${metadata.title}" />
-    <meta property="og:description" content="${metadata.description}" />
-    <meta property="og:image" content="${metadata.image}" />
+    <meta property="og:url" content="${escapeHTML(metadata.url)}" />
+    <meta property="og:title" content="${escapeHTML(metadata.title)}" />
+    <meta property="og:description" content="${escapeHTML(metadata.description)}" />
+    <meta property="og:image" content="${escapeHTML(metadata.image)}" />
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="400" />
-    <meta property="og:image:alt" content="${rugeron.title} - Thumbnail" />
+    <meta property="og:image:alt" content="${escapeHTML(`${rugeron.title} - Thumbnail`)}" />
     <meta property="og:site_name" content="Rugerón" />
     <meta property="og:locale" content="es_ES" />
-    
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${metadata.title}" />
-    <meta name="twitter:description" content="${metadata.description}" />
-    <meta name="twitter:image" content="${metadata.image}" />
-    <meta name="twitter:image:alt" content="${rugeron.title} - Thumbnail" />
-    
-    <!-- Additional meta tags -->
+    <meta name="twitter:title" content="${escapeHTML(metadata.title)}" />
+    <meta name="twitter:description" content="${escapeHTML(metadata.description)}" />
+    <meta name="twitter:image" content="${escapeHTML(metadata.image)}" />
+    <meta name="twitter:image:alt" content="${escapeHTML(`${rugeron.title} - Thumbnail`)}" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="${metadata.url}" />
-    
-    <!-- Include the same CSS and JS as the main app -->
-    <link rel="stylesheet" href="/src/index.css" />
-  </head>
-  <body>
-    <div id="root">
-      <!-- This will be replaced by React when the app loads -->
-      <div style="text-align: center; padding: 2rem; font-family: Arial, sans-serif;">
-        <h1>${rugeron.title}</h1>
-        <p>${metadata.description}</p>
-        <p>Redirigiendo a la aplicación...</p>
-      </div>
-    </div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>`;
+    <link rel="canonical" href="${escapeHTML(metadata.url)}" />`;
 
-  return html;
+  return baseHTML
+    .replace(/<title>.*?<\/title>/, `<title>${escapeHTML(metadata.title)}</title>`)
+    .replace("</head>", `${metaTags}\n  </head>`)
+    .replace('<div id="root"></div>', `<div id="root" data-prerender-route="${escapeHTML(routePath(rugeron))}"></div>`);
 }
 
-// Create the dist directory if it doesn't exist
-const distDir = path.join(__dirname, '../dist');
-if (!fs.existsSync(distDir)) {
-  fs.mkdirSync(distDir, { recursive: true });
-}
-
-// Create the rugeron subdirectory
-const rugeronDir = path.join(distDir, 'rugeron');
 if (!fs.existsSync(rugeronDir)) {
   fs.mkdirSync(rugeronDir, { recursive: true });
 }
 
-// Generate HTML files for each rugeron
-console.log('Generating static HTML files for individual Rugeron pages...');
+console.log("Generating static HTML files for individual Rugeron pages...");
 
-rugeronesData.forEach(rugeron => {
+rugeronesData.forEach((rugeron) => {
   const html = generateRugeronHTML(rugeron);
-  const filePath = path.join(rugeronDir, `${rugeron.id}.html`);
-  
-  fs.writeFileSync(filePath, html);
-  console.log(`✅ Generated: ${rugeron.id}.html`);
+  const routeDir = path.join(rugeronDir, rugeron.id);
+  const indexPath = path.join(routeDir, "index.html");
+  const legacyPath = path.join(rugeronDir, `${rugeron.id}.html`);
+
+  fs.mkdirSync(routeDir, { recursive: true });
+  fs.writeFileSync(indexPath, html);
+  fs.writeFileSync(legacyPath, html);
+  console.log(`Generated: rugeron/${rugeron.id}/index.html`);
 });
 
-console.log(`\n🎬 Generated ${rugeronesData.length} static HTML files with metadata!`);
-console.log('📁 Files are saved in: dist/rugeron/');
-console.log('\n💡 These files contain the proper meta tags for social media crawlers.');
-console.log('🔗 When someone shares a link to /rugeron/[id], the crawler will see the correct metadata!');
+fs.copyFileSync(baseHTMLPath, path.join(distDir, "404.html"));
+
+console.log(`\nGenerated ${rugeronesData.length} static detail pages.`);
+console.log("Copied dist/index.html to dist/404.html for React Router fallback.");

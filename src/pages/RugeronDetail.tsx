@@ -3,7 +3,7 @@ import { ArrowLeft, Calendar, MapPin, Users, ExternalLink, X } from "lucide-reac
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import rugeroneData from "@/data/rugerones.json";
-import { parseEuropeanDate } from "@/lib/utils";
+import { assetPath, parseEuropeanDate } from "@/lib/utils";
 import { useState } from "react";
 
 const RugeronDetail = () => {
@@ -49,7 +49,7 @@ const RugeronDetail = () => {
             {/* Thumbnail Image */}
             <div className="flex-shrink-0">
               <img 
-                src={rugeron.thumbnail} 
+                src={assetPath(rugeron.thumbnail)}
                 alt={`${rugeron.title} thumbnail`}
                 className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-lg shadow-lg"
               />
@@ -130,10 +130,10 @@ const RugeronDetail = () => {
                   {rugeron.photos.map((photo, index) => (
                     <div key={index} className="overflow-hidden rounded-lg cursor-pointer group">
                       <img
-                        src={photo}
+                        src={assetPath(photo)}
                         alt={`${rugeron.title} photo ${index + 1}`}
                         className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-                        onClick={() => setSelectedPhoto(photo)}
+                        onClick={() => setSelectedPhoto(assetPath(photo))}
                       />
                     </div>
                   ))}
